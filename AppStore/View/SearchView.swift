@@ -14,19 +14,38 @@ struct SearchView: View {
     var body: some View {
         NavigationStack {
             GeometryReader { proxy in
-                ScrollView {
-                    ForEach(vm.results) { result in
-                        VStack(spacing: 16) {
-                            AppIconTitleView(result: result)
-                            
-                            ScreenshotsRow(proxy: proxy, result: result)
+                if vm.isSearching {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .controlSize(.large)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+                ZStack {
+                    if vm.results.isEmpty && vm.query.isEmpty {
+                        VStack(spacing:16) {
+                            Image(systemName: "magnifyingglass.circle.fill")
+                                .font(.system(size: 50))
+                            Text("Please search for results")
+                                .font(.title)
+                                .multilineTextAlignment(.center)
                         }
-                        .padding(16)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else {
+                        ScrollView {
+                            ForEach(vm.results) { result in
+                                VStack(spacing: 16) {
+                                    AppIconTitleView(result: result)
+                                    
+                                    ScreenshotsRow(proxy: proxy, result: result)
+                                }
+                                .padding(16)
+                            }
+                        }
                     }
                 }
             }
             .navigationTitle("Search")
-            .searchable(text: .constant("Enter search term"))
+            .searchable(text: $vm.query)
         }
     }
 }
@@ -52,7 +71,7 @@ struct AppIconTitleView: View {
                 RoundedRectangle(cornerRadius: 16)
                     .frame(width: 80, height: 80)
             }
-
+            
             VStack(alignment: .leading) {
                 Text(result.trackName)
                     .lineLimit(1)
