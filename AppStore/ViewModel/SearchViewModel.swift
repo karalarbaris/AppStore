@@ -12,7 +12,7 @@ import Combine
 class SearchViewModel: ObservableObject {
     
     @Published var results: [Result] = []
-    @Published var query = ""
+    @Published var query = "you"
     @Published var isSearching: Bool = false
     
     private var cancellables = Set<AnyCancellable>()

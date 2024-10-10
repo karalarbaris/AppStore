@@ -17,4 +17,6 @@ struct Result: Codable, Identifiable {
     let artworkUrl512: String
     let primaryGenreName: String
     let screenshotUrls: [String]
+    let averageUserRating: Double
+    let userRatingCount: Int
 }

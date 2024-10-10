@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B930D3212CB7C28A0005D1CC /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B930D3202CB7C28A0005D1CC /* Int.swift */; };
 		B9E072D72CAFC23800E366C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E072D02CAFC23800E366C2 /* Preview Assets.xcassets */; };
 		B9E072D82CAFC23800E366C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E072D42CAFC23800E366C2 /* Assets.xcassets */; };
 		B9E072D92CAFC23800E366C2 /* AppStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E072D32CAFC23800E366C2 /* AppStoreApp.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B930D3202CB7C28A0005D1CC /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		B9AECCFB2CA5CDEF00E2DD87 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E072D02CAFC23800E366C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9E072D32CAFC23800E366C2 /* AppStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreApp.swift; sourceTree = "<group>"; };
@@ -36,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B930D31F2CB7C27D0005D1CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B930D3202CB7C28A0005D1CC /* Int.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B9AECCF22CA5CDEF00E2DD87 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		B9E072D62CAFC23800E366C2 /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				B930D31F2CB7C27D0005D1CC /* Extensions */,
 				B9E072CE2CAFC23800E366C2 /* API */,
 				B9E072CF2CAFC23800E366C2 /* Model */,
 				B9E072D22CAFC23800E366C2 /* View */,
@@ -180,6 +191,7 @@
 			files = (
 				B9E072D92CAFC23800E366C2 /* AppStoreApp.swift in Sources */,
 				B9E072DC2CAFC26200E366C2 /* SearchResult.swift in Sources */,
+				B930D3212CB7C28A0005D1CC /* Int.swift in Sources */,
 				B9E072E02CAFC95C00E366C2 /* SearchViewModel.swift in Sources */,
 				B9E072DA2CAFC23800E366C2 /* SearchView.swift in Sources */,
 			);

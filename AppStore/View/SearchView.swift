@@ -78,10 +78,28 @@ struct AppIconTitleView: View {
                     .font(.system(size: 20))
                 Text(result.primaryGenreName)
                     .foregroundStyle(.gray)
-                Text("Stars 30.0M")
+                
+                HStack(spacing: 1) {
+                    ForEach(0..<Int(result.averageUserRating), id: \.self) {_ in
+                        Image(systemName: "star.fill")
+                    }
+                    ForEach(0..<5-Int(result.averageUserRating), id: \.self) {_ in
+                        Image(systemName: "star")
+                    }
+                    Text(result.userRatingCount.roundedWithAbbreviations)
+                        .padding(.leading, 4)
+                        .font(.headline)
+                }
+                .padding(.top, 1)
             }
             Spacer()
-            Image(systemName: "icloud.and.arrow.down")
+            Button {
+                
+            } label: {
+                Image(systemName: "icloud.and.arrow.down")
+                    .font(.system(size: 24))
+            }
+
         }
     }
 }
@@ -106,13 +124,6 @@ struct ScreenshotsRow: View {
                         .frame(width: width, height: 200)
                 }
             }
-            
-            RoundedRectangle(cornerRadius: 16)
-                .frame(width: width, height: 200)
-            RoundedRectangle(cornerRadius: 16)
-                .frame(width: width, height: 200)
-            RoundedRectangle(cornerRadius: 16)
-                .frame(width: width, height: 200)
         }
     }
 }
