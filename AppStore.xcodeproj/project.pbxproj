@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B930D3212CB7C28A0005D1CC /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B930D3202CB7C28A0005D1CC /* Int.swift */; };
+		B9797C5A2CC903D500AF98AD /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9797C592CC903D500AF98AD /* AppDetailView.swift */; };
+		B9797C5C2CC903E900AF98AD /* AppDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9797C5B2CC903E900AF98AD /* AppDetailViewModel.swift */; };
+		B9797C5E2CC9042600AF98AD /* AppDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9797C5D2CC9042600AF98AD /* AppDetail.swift */; };
 		B9E072D72CAFC23800E366C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E072D02CAFC23800E366C2 /* Preview Assets.xcassets */; };
 		B9E072D82CAFC23800E366C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E072D42CAFC23800E366C2 /* Assets.xcassets */; };
 		B9E072D92CAFC23800E366C2 /* AppStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E072D32CAFC23800E366C2 /* AppStoreApp.swift */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		B930D3202CB7C28A0005D1CC /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		B9797C592CC903D500AF98AD /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
+		B9797C5B2CC903E900AF98AD /* AppDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewModel.swift; sourceTree = "<group>"; };
+		B9797C5D2CC9042600AF98AD /* AppDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetail.swift; sourceTree = "<group>"; };
 		B9AECCFB2CA5CDEF00E2DD87 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E072D02CAFC23800E366C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9E072D32CAFC23800E366C2 /* AppStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreApp.swift; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E072DB2CAFC24900E366C2 /* SearchResult.swift */,
+				B9797C5D2CC9042600AF98AD /* AppDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -89,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E072D52CAFC23800E366C2 /* SearchView.swift */,
+				B9797C592CC903D500AF98AD /* AppDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E072DF2CAFC95C00E366C2 /* SearchViewModel.swift */,
+				B9797C5B2CC903E900AF98AD /* AppDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -191,8 +200,11 @@
 			files = (
 				B9E072D92CAFC23800E366C2 /* AppStoreApp.swift in Sources */,
 				B9E072DC2CAFC26200E366C2 /* SearchResult.swift in Sources */,
+				B9797C5C2CC903E900AF98AD /* AppDetailViewModel.swift in Sources */,
 				B930D3212CB7C28A0005D1CC /* Int.swift in Sources */,
+				B9797C5A2CC903D500AF98AD /* AppDetailView.swift in Sources */,
 				B9E072E02CAFC95C00E366C2 /* SearchViewModel.swift in Sources */,
+				B9797C5E2CC9042600AF98AD /* AppDetail.swift in Sources */,
 				B9E072DA2CAFC23800E366C2 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
