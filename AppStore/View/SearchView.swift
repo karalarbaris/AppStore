@@ -42,6 +42,7 @@ struct SearchView: View {
                                         
                                         ScreenshotsRow(proxy: proxy, result: result)
                                     }
+                                    .foregroundStyle(Color(.label))
                                     .padding(16)
                                     
                                 }
@@ -76,8 +77,12 @@ struct AppIconTitleView: View {
                     .frame(width: 80, height: 80)
                     .clipShape(RoundedRectangle(cornerRadius: 16))
             } placeholder: {
-                RoundedRectangle(cornerRadius: 16)
-                    .frame(width: 80, height: 80)
+//                RoundedRectangle(cornerRadius: 16)
+//                    .frame(width: 80, height: 80)
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .controlSize(.large)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             
             VStack(alignment: .leading) {
@@ -128,8 +133,12 @@ struct ScreenshotsRow: View {
                         .scaledToFill()
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                 } placeholder: {
-                    RoundedRectangle(cornerRadius: 8)
-                        .frame(width: width, height: 200)
+//                    RoundedRectangle(cornerRadius: 8)
+//                        .frame(width: width, height: 200)
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .controlSize(.large)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
         }
