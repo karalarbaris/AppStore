@@ -65,6 +65,36 @@ struct AppDetailView: View {
                 }
                 .padding(.horizontal)
                 
+                Text("Preview")
+                    .font(.system(size: 24, weight: .semibold))
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                ScrollView(.horizontal) {
+//                    GeometryReader { proxy in
+//                        let width = proxy.size.width / 3
+                        HStack(spacing:16) {
+                            ForEach(appDetail.screenshotUrls, id: \.self) { screenshotUrl in
+                                AsyncImage(url: URL(string: screenshotUrl)) { img in
+                                    img
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 300, height: 500)
+                                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                                } placeholder: {
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .frame(width: 300, height: 500)
+                                }
+
+                                
+                            }
+                        }
+                        .padding(.horizontal)
+//                    }
+                }
+                
+                
+                
                 VStack(alignment: .leading) {
                     Text("Description")
                         .font(.system(size: 24, weight: .semibold))
