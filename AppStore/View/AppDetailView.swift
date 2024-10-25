@@ -124,59 +124,16 @@ struct PreviewScreenshotsView: View {
                 }
                 .padding(.horizontal)
                 .foregroundStyle(Color(.label))
+                .scrollTargetLayout()
         }
+        .scrollTargetBehavior(.viewAligned)
         .fullScreenCover(isPresented: $isPresentingPreviews) {
             FullScreeenScreenshotsView(screenShotsUrls: vm.appDetail?.screenshotUrls ?? [])
         }
     }
 }
 
-struct FullScreeenScreenshotsView: View {
-    
-    let screenShotsUrls: [String]
-    @Environment(\.dismiss) var dismiss
-    
-    var body: some View {
-        GeometryReader { proxy in
-            ZStack {
-                VStack {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .foregroundStyle(Color(.label))
-                            .font(.title)
-                    }
-                    Spacer()
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding()
-                
-                ScrollView(.horizontal) {
-                    HStack(spacing: 16) {
-                        let width = proxy.size.width - 64
-                        ForEach(screenShotsUrls, id: \.self) { url in
-                            AsyncImage(url: URL(string: url)) { img in
-                                img
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: width, height: 600)
-                                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                            } placeholder: {
-                                ProgressView()
-                                    .progressViewStyle(.circular)
-                                    .controlSize(.large)
-                                    .frame(width: width, height: 600)
-    //                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 32)
-                }
-            }
-        }
-    }
-}
+
 
 
 
