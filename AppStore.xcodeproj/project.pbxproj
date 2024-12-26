@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B906C3B02D1D517600319303 /* ReviewResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B906C3AF2D1D517600319303 /* ReviewResults.swift */; };
+		B906C3B22D1D525700319303 /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B906C3B12D1D525700319303 /* ReviewsView.swift */; };
+		B906C3B62D1D581F00319303 /* ReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B906C3B52D1D581F00319303 /* ReviewsViewModel.swift */; };
 		B930D3212CB7C28A0005D1CC /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B930D3202CB7C28A0005D1CC /* Int.swift */; };
 		B957B7232CCB8C7200D5FC18 /* FullScreeenScreenshotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957B7222CCB8C7200D5FC18 /* FullScreeenScreenshotsView.swift */; };
 		B9797C5A2CC903D500AF98AD /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9797C592CC903D500AF98AD /* AppDetailView.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B906C3AF2D1D517600319303 /* ReviewResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResults.swift; sourceTree = "<group>"; };
+		B906C3B12D1D525700319303 /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
+		B906C3B52D1D581F00319303 /* ReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewModel.swift; sourceTree = "<group>"; };
 		B930D3202CB7C28A0005D1CC /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		B957B7222CCB8C7200D5FC18 /* FullScreeenScreenshotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreeenScreenshotsView.swift; sourceTree = "<group>"; };
 		B9797C592CC903D500AF98AD /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 			children = (
 				B9E072DB2CAFC24900E366C2 /* SearchResult.swift */,
 				B9797C5D2CC9042600AF98AD /* AppDetail.swift */,
+				B906C3AF2D1D517600319303 /* ReviewResults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +107,7 @@
 				B9E072D52CAFC23800E366C2 /* SearchView.swift */,
 				B9797C592CC903D500AF98AD /* AppDetailView.swift */,
 				B957B7222CCB8C7200D5FC18 /* FullScreeenScreenshotsView.swift */,
+				B906C3B12D1D525700319303 /* ReviewsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 			children = (
 				B9E072DF2CAFC95C00E366C2 /* SearchViewModel.swift */,
 				B9797C5B2CC903E900AF98AD /* AppDetailViewModel.swift */,
+				B906C3B52D1D581F00319303 /* ReviewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,8 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B906C3B22D1D525700319303 /* ReviewsView.swift in Sources */,
 				B9E072D92CAFC23800E366C2 /* AppStoreApp.swift in Sources */,
+				B906C3B62D1D581F00319303 /* ReviewsViewModel.swift in Sources */,
 				B9E072DC2CAFC26200E366C2 /* SearchResult.swift in Sources */,
+				B906C3B02D1D517600319303 /* ReviewResults.swift in Sources */,
 				B9797C5C2CC903E900AF98AD /* AppDetailViewModel.swift in Sources */,
 				B930D3212CB7C28A0005D1CC /* Int.swift in Sources */,
 				B9797C5A2CC903D500AF98AD /* AppDetailView.swift in Sources */,
