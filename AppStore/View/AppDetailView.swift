@@ -18,7 +18,8 @@ struct AppDetailView: View {
     }
     
     var body: some View {
-        ScrollView {
+        GeometryReader { proxy in
+            ScrollView {
             if let appDetail = vm.appDetail {
                 HStack(spacing: 16) {
                     
@@ -66,10 +67,16 @@ struct AppDetailView: View {
                 .padding(.horizontal)
                 
                 PreviewScreenshotsView(vm: vm)
-
                 
-                
-                
+                VStack(alignment: .leading) {
+                    Text("Reviews")
+                        .font(.system(size: 24, weight: .semibold))
+                        .padding(.vertical)
+                }
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .leading)
+ 
+                ReviewsView(trackId: vm.trackId, proxy: proxy)
                 
                 VStack(alignment: .leading) {
                     Text("Description")
@@ -84,7 +91,8 @@ struct AppDetailView: View {
             }
             
         }
-        //        .navigationTitle("deneme")
+        }
+            //        .navigationTitle("deneme")
     }
 }
 
