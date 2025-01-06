@@ -19,6 +19,15 @@ struct AppDetailView: View {
     
     var body: some View {
         GeometryReader { proxy in
+            
+            if let _ = vm.error {
+                Text("Failed to fetch app details")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .font(.largeTitle)
+                    .padding()
+                    .multilineTextAlignment(.center)
+            }
+            
             ScrollView {
             if let appDetail = vm.appDetail {
                 HStack(spacing: 16) {

@@ -19,6 +19,14 @@ struct ReviewsView: View {
     
     var body: some View {
         
+        if let _ = vm.error {
+            Text("Failed to fetch app reviews")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .font(.largeTitle)
+                .padding()
+                .multilineTextAlignment(.center)
+        }
+        
             ScrollView(.horizontal) {
                 HStack(spacing: 16) {
                     ForEach(vm.reviews) { review in

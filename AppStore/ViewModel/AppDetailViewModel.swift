@@ -11,6 +11,8 @@ import Foundation
 class AppDetailViewModel: ObservableObject {
     
     @Published var appDetail: AppDetail?
+    @Published var error: Error?
+    
     let trackId: Int
     
     init(trackId: Int) {
@@ -21,18 +23,13 @@ class AppDetailViewModel: ObservableObject {
     
     private func getAppDetail(trackId: Int) {
         Task {
-            
             do {
-                guard let url = URL(string: "https://itunes.apple.com/lookup?id=\(trackId)") else { return }
-                let (data, response) = try await URLSession.shared.data(from: url)
-                let appDetailResult = try JSONDecoder().decode(AppDetailResults.self, from: data)
-                self.appDetail = appDetailResult.results.first
+                self.appDetail = try await APIService.fetchAppDetail(trackId: trackId)
             } catch {
                 print("Error: \(error)")
+                self.error = error
             }
-            
         }
     }
-    
     
 }

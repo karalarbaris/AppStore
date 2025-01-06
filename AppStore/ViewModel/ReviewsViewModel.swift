@@ -11,24 +11,24 @@ import Foundation
 class ReviewsViewModel: ObservableObject {
     
     @Published var reviews: [Review] = []
+    @Published var error: Error?
+    
     private let trackId: Int
     
     init (trackId: Int) {
         self.trackId = trackId
-        fetchReviews()
+        getReviews()
     }
     
-    private func fetchReviews () {
+    private func getReviews () {
         
         Task {
             do {
-                guard let url = URL(string: "https://itunes.apple.com/rss/customerreviews/page=1/id=\(trackId)/sortby=mostrecent/json?l=en&cc=us") else { return }
-                let (data, response) = try await URLSession.shared.data(from: url)
-                let results = try JSONDecoder().decode(ReviewResults.self, from: data)
-                self.reviews = results.feed.entry
+                self.reviews = try await APIService.fetchReviews(trackId: trackId)
                 
             } catch {
                 print("Failed to fetch reviews: \(error.localizedDescription)")
+                self.error = error
             }
         }
         

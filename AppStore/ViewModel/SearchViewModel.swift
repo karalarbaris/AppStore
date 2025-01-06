@@ -14,40 +14,31 @@ class SearchViewModel: ObservableObject {
     @Published var results: [Result] = []
     @Published var query = "you"
     @Published var isSearching: Bool = false
+    @Published var error: Error?
     
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        
         $query
             .debounce(for: 0.5, scheduler: DispatchQueue.main)
             .sink { [weak self] newValue in
-            self?.fetchJSONData(searchValue: newValue)
+            self?.getSearchResults(searchValue: newValue)
         }.store(in: &cancellables)
-        
     }
     
     
-    private func fetchJSONData(searchValue: String) {
-        
+    private func getSearchResults(searchValue: String) {
         Task {
-            
             do {
-                guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchValue)&entity=software") else  { return }
                 isSearching = true
-                let (data, response) = try await URLSession.shared.data(from: url)
-                let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-//                searchResult.results.forEach { result in
-//                    print(result.trackName)
-//                }
-                results = searchResult.results
+                results = try await APIService.fetchSearchResults(searchValue: searchValue)
                 isSearching = false
             } catch {
                 print("Error: \(error)")
+                self.error = error
                 isSearching = false
             }
-            
         }
-        
     }
+    
 }
